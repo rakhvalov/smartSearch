@@ -3,7 +3,7 @@ const input = document.getElementById('search');
 const clearButton = document.getElementById('clearButton');
 
 let arr = [];
-
+// Получаем список брендов
 if (list) {
   for (let i = 0; i < list.children.length; i++) {
     const item = list.children[i].attributes[0].textContent;
@@ -11,6 +11,7 @@ if (list) {
   }
 }
 
+// Сравниваем и фильруем введённые данные со списком брендов
 const findAndFilterItems = (query, arr) => {
   const result = arr.filter(el => {
 
@@ -33,6 +34,7 @@ const findAndFilterItems = (query, arr) => {
   }
 }
 
+// Очищаем всё
 const clearFilter = () => {
   for (let i = 0; i < list.children.length; i++) {
     const item = list.children[i];
@@ -42,6 +44,7 @@ const clearFilter = () => {
   } 
 }
 
+// Слушаем события на ввод данных в поле, и нажатие на кнопку
 if(input) {
   input.addEventListener('keyup', () => {
     findAndFilterItems(input.value, arr);
