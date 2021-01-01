@@ -1,5 +1,5 @@
 const list = document.querySelector('.list');
-const input = document.getElementById('search');
+const input = document.getElementById('brandSearch');
 const clearButton = document.getElementById('clearButton');
 
 let arr = [];
@@ -23,7 +23,7 @@ const findAndFilterItems = (query, arr) => {
   for (let i = 0; i < list.children.length; i++) {
 
     const item = list.children[i];
-    const show = result.includes(item.textContent.toLowerCase());
+    const show = result.includes(item.attributes[0].textContent.toLowerCase());
 
     if (show) {
       item.classList.remove('hidden');
